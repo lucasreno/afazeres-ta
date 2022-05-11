@@ -6,7 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  novaTarefa: string = '';
+  tarefas: string[] = [];
+  constructor() { }
+  
+  apagarTarefa(indice){
+    this.tarefas.splice(indice,1);
+  }
 
-  constructor() {}
-
+  adicionarTarefa(){
+    this.tarefas.push(this.novaTarefa);
+    this.novaTarefa = '';
+  }
 }
